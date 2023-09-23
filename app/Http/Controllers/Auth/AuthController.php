@@ -20,7 +20,9 @@ class AuthController extends Controller
         }
     }
 
-
+    /**
+     * ロールに応じてルーティングの名前を変換
+     */
     public function route($route): string
     {
         if ( empty( $this->role)) {
@@ -29,7 +31,11 @@ class AuthController extends Controller
         return $this->role . '.' . $route;
     }
 
-
+    /**
+     * ロールに応じたリソース名に変換
+     * @param mixed $path
+     * @return string
+     */
     public function resource($path): string
     {
         if ( empty( $this->role)) {
@@ -41,7 +47,8 @@ class AuthController extends Controller
     /**
      * ロールに応じたモデルクラスの名前を取得する
      */
-    public function modelName() {
+    public function modelName()
+    {
         if (empty($this->role)) {
             return User::class;
         }
