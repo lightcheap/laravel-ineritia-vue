@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::prefix('member')->name('member.')->group(function () {
+
     Route::middleware(['auth:member'])->group(function() {
+
         Route::get('/dashboard', function () {
             return Inertia::render('Member/Dashboard');
         })->name('dashboard');
