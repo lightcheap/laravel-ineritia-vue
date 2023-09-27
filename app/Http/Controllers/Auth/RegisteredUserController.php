@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+// use App\Http\Controllers\Controller;
 use App\Models\User;
+// use App\Models\Member;
+// use App\Models\Admin;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
@@ -32,9 +34,11 @@ class RegisteredUserController extends AuthController
     public function store(Request $request): RedirectResponse
     {
         $modelName = $this->modelName();
+        // $modelName = get_class($modelName);
+        // dd($modelName);
         $request->validate([
             'name'      => 'required|string|max:255',
-            'email'     => 'required|string|email|max:255|unique:' . $modelName::class,
+            'email'     => 'required|string|email|max:255|unique:' . User::class,
             'password'  => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 

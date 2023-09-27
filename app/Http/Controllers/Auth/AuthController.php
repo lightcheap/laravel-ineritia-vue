@@ -14,9 +14,9 @@ class AuthController extends Controller
         if ( empty( $this->role)) {
             $this->package = '';
         } else {
-            $camel = Str::camel($this->role);
-            $camel[0] = strtoupper($camel[0]);
-            $this->package =$camel;
+            $camel          = Str::camel($this->role);
+            $camel[0]       = strtoupper($camel[0]);
+            $this->package  =$camel;
         }
     }
 
