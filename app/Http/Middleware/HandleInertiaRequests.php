@@ -31,6 +31,17 @@ class HandleInertiaRequests extends Middleware
     public function share(Request $request): array
     {
         $role = detect_role();
+        // $hoge = [
+        //     ...parent::share($request),
+        //     'auth' => [
+        //         'user' => $request->user($role),
+        //     ],
+        //     'ziggy' => fn () => [
+        //         ...(new Ziggy)->toArray(),
+        //         'location' => $request->url(),
+        //     ],
+        // ];
+        // dd($hoge);
         return [
             ...parent::share($request),
             'auth' => [
