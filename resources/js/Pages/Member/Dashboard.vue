@@ -8,7 +8,7 @@ import { Head } from '@inertiajs/vue3';
 
     <MemberLayout>
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Member Dashboard</h2>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">メンバーのダッシュボード</h2>
         </template>
 
         <div class="py-12">
