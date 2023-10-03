@@ -1,5 +1,5 @@
 <?php
-use App\Http\Controllers\Member\ProfileController;
+use App\Http\Controllers\Admin\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
