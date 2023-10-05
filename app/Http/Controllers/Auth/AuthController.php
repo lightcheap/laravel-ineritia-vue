@@ -16,7 +16,7 @@ class AuthController extends Controller
         } else {
             $camel          = Str::camel($this->role);
             $camel[0]       = strtoupper($camel[0]);
-            $this->package  =$camel;
+            $this->package  = $camel;
         }
     }
 
@@ -54,4 +54,5 @@ class AuthController extends Controller
         }
         return '\\App\\Models\\' . $this->package;
     }
+
 }
