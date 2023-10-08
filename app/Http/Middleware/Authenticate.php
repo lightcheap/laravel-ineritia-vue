@@ -14,6 +14,7 @@ class Authenticate extends Middleware
     {
         $role  = detect_role();
         $route = empty($role) ? 'login' : $role . '.login';
+        // dd($route);
         return $request->expectsJson() ? null : route($route);
     }
 }

@@ -35,7 +35,6 @@ class RegisteredUserController extends AuthController
     {
         $modelName = $this->modelName();
         $model = new $modelName;
-        // $tableName = $model->getTable();
 
         $request->validate([
             'name'      => 'required|string|max:255',
@@ -48,7 +47,6 @@ class RegisteredUserController extends AuthController
             'email'     => $request->email,
             'password'  => Hash::make($request->password),
         ]);
-
         event(new Registered($user));
 
         Auth::login($user);

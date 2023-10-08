@@ -25,7 +25,11 @@ Route::get('/', function () {
     ]);
 });
 
-
+// memberとしての認証、および、機能のルーティング
+require __DIR__ . '/member.php';
+// adminとしての認証、および、機能のルーティング
+require __DIR__ . '/admin.php';
+require __DIR__ . '/auth.php';
 
 // Route::get('/dashboard', function () {
 //     return Inertia::render('Dashboard');
@@ -39,11 +43,3 @@ Route::get('/', function () {
 //     Route::delete('/profile', [ProfileController::class, 'destroy'])
 //     ->name('profile.destroy');
 // });
-
-// memberとしての認証、および、機能のルーティング
-require __DIR__.'/member.php';
-// adminとしての認証、および、機能のルーティング
-require __DIR__.'/admin.php';
-
-
-require __DIR__.'/auth.php';
