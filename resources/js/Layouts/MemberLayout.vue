@@ -64,10 +64,18 @@ const showingNavigationDropdown = ref(false);
                                     </template>
 
                                     <template #content>
-                                        <DropdownLink :href="route('member.profile.edit')"> Profile </DropdownLink>
-                                        <DropdownLink :href="route('member.logout')" method="post" as="button">
-                                            Log Out
+                                        <DropdownLink :href="route('member.profile.edit')">
+                                            プロフィール
+                                            </DropdownLink>
+                                        <form @submit.prevent="submit">
+                                        <DropdownLink
+                                            :href="route('member.logout')"
+                                            method="post"
+                                            as="button"
+                                            >
+                                            Log Out1
                                         </DropdownLink>
+                                        </form>
                                     </template>
                                 </Dropdown>
                             </div>
@@ -127,10 +135,19 @@ const showingNavigationDropdown = ref(false);
                         </div>
 
                         <div class="mt-3 space-y-1">
-                            <ResponsiveNavLink :href="route('member.profile.edit')"> Profile </ResponsiveNavLink>
-                            <ResponsiveNavLink :href="route('member.logout')" method="post" as="button">
-                                Log Out
+                            <ResponsiveNavLink
+                                :href="route('member.profile.edit')"
+                                > プロフィール
                             </ResponsiveNavLink>
+
+                            <!-- <form @submit.prevent="submit"> -->
+                            <ResponsiveNavLink
+                                :href="route('member.logout')"
+                                method="post"
+                                as="button"
+                                > ログアウト
+                            </ResponsiveNavLink>
+                            <!-- </form> -->
                         </div>
                     </div>
                 </div>

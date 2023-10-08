@@ -31,11 +31,6 @@ class AuthenticatedSessionController extends AuthController
             'status' => session('status'),
         ]);
 
-
-        // return Inertia::render($this->resource('Auth/Login'), [
-        //     'canResetPassword' => Route::has($this->route('password.request')),
-        //     'status' => session('status'),
-        // ]);
     }
 
     /**
@@ -55,7 +50,6 @@ class AuthenticatedSessionController extends AuthController
      */
     public function destroy(Request $request): RedirectResponse
     {
-        dd();
         Auth::guard('web')->logout();
 
         $request->session()->invalidate();
